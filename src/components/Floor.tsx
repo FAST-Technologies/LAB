@@ -10,7 +10,9 @@ const Floor = (props: any) => {
   const { nodes, materials } = useGLTF('/models/Floor.glb') as any
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Plane001.geometry} material={materials['Stone Walkway']} position={[-1.416, 0.469, 6.603]} scale={80.313} />
+      <mesh geometry={nodes.Plane001.geometry}  material-color="#ffffff" material={materials['Stone Walkway']} position={[-1.416, 0.469, 6.603]} scale={80.313}>
+          <meshStandardMaterial color="#FFFFFF" />
+      </mesh>
     </group>
   )
 }

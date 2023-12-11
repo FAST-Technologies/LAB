@@ -1,6 +1,7 @@
 import { Suspense } from 'react'
 import { OrbitControls } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
+import {useState} from "react"
 import Model from './components/Model'
 import Table from './components/Table'
 import Automatic from './components/Automatic'
@@ -25,37 +26,50 @@ import WiresForAutomatic from './components/WiresForAutomatic'
 import WiresForAutomatRegulator from './components/WiresForAutomatRegulator'
 import Capacitor from './components/Capacitor'
 import Fireflies from './components/Fireflies'
+import {Physics} from "@react-three/cannon";
 
 function App() {
+  const [loaded, setLoaded] = useState(false)
   return (
-      <Canvas dpr={[1, 2]} camera={{ fov: 45, position: [-4, 2, -4] }}>
+      <Canvas
+          shadows
+          dpr={[1, 5]}
+          camera={{ position: [10, 0, 8]}}
+      >
+        <OrbitControls />
+        <color attach="background" args={['#1e2243']} />
+        <hemisphereLight intensity={0.65}/>
         <Suspense fallback={null}>
-          <color attach="background" args={['#1e2243']} />
-          <Fireflies count={50} />
-          <Table/>
-          <DeskWithSurface/>
-          {/*<Walls/>*/}
-          <Capacitor/>
-          <SinkerLine/>
-          <Voltmeter/>
-          <WiresForAutomatic/>
-          <WiresForAutomatRegulator/>
-          <Floor/>
-          <Automatic/>
-          <Bullet/>
-          <CapacitorContacts/>
-          <CapacitorSurface/>
-          <Coil/>
-          <ContactRoad/>
-          <DeskForGun/>
-          <GunsTrunk/>
-          <LightBulb/>
-          <PendulumBasis/>
-          <PowerSocket/>
-          <RegulatorWheel/>
-          <RegulatorBase/>
-          <OrbitControls />
+
+            <Physics>
+              <Fireflies count={50} />
+              <Table shadows/>
+              <DeskWithSurface/>
+              {/*<Walls/>*/}
+              <Capacitor/>
+              <SinkerLine/>
+              <Voltmeter/>
+              <WiresForAutomatic/>
+              <WiresForAutomatRegulator/>
+              <Floor/>
+              <Automatic/>
+              <Bullet/>
+              <CapacitorContacts/>
+              <CapacitorSurface/>
+              <Coil/>
+              <ContactRoad/>
+              <DeskForGun/>
+              <GunsTrunk/>
+              <LightBulb/>
+              <PendulumBasis/>
+              <PowerSocket/>
+              <RegulatorWheel/>
+              <RegulatorBase/>
+            </Physics>
+
         </Suspense>
+        <gridHelper args={[200, 100, '#1100ff', '#1100ff']} position={[0, -1.26, 0]} />
+
       </Canvas>
   )
 }
