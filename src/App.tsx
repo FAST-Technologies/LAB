@@ -1,5 +1,6 @@
 import { Suspense } from 'react'
 import { OrbitControls } from '@react-three/drei'
+import {Plane, OrthographicCamera} from "@react-three/drei";
 import { Canvas } from '@react-three/fiber'
 import {useState} from "react"
 import Model from './components/Model'
@@ -34,11 +35,15 @@ function App() {
       <Canvas
           shadows
           dpr={[1, 5]}
-          camera={{ position: [10, 0, 8]}}
+          camera={{ fov: 75, position: [10, 10, 8]}}
       >
+        {/*<OrthographicCamera makeDefault position={[0, 0, 1]} />*/}
         <OrbitControls />
         <color attach="background" args={['#1e2243']} />
         <hemisphereLight intensity={0.65}/>
+        <ambientLight intensity={Math.PI / 2} />
+        <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
+        <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
         <Suspense fallback={null}>
             <Physics>
               <Fireflies count={50} />
