@@ -40,7 +40,6 @@ function App() {
         <color attach="background" args={['#1e2243']} />
         <hemisphereLight intensity={0.65}/>
         <Suspense fallback={null}>
-
             <Physics>
               <Fireflies count={50} />
               <Table shadows/>
@@ -66,10 +65,11 @@ function App() {
               <RegulatorWheel/>
               <RegulatorBase/>
             </Physics>
-
         </Suspense>
-        <gridHelper args={[200, 100, '#1100ff', '#1100ff']} position={[0, -1.26, 0]} />
-
+        <gridHelper
+            args={[200, 100, '#1100ff', '#1100ff']}
+            position={[0, -1.26, 0]}
+        />
       </Canvas>
   )
 }
