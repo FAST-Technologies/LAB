@@ -12,6 +12,10 @@ const Table = (props: any) => {
     const [hovered, hover] = useState<boolean>(false)
     const [clicked, click] = useState<boolean>(false)
     const { nodes, materials } = useGLTF('/models/Table.glb') as any
+    const setClick = () => {
+        click(!clicked)
+    }
+
     return (
       <group {...props} dispose={null}>
           <mesh
@@ -19,10 +23,11 @@ const Table = (props: any) => {
               geometry={nodes.table_board.geometry}
               material={nodes.table_board.material}
               position={[-0.295, 17.626, -1.117]}
-              scale={clicked ? [2, 2.649, 2] : [1, 1.649, 1]}
+              // scale={clicked ? [2, 2.649, 2] : [1, 1.649, 1]}
+              scale={[1, 1.649, 1]}
               ref={ref}
 
-              onClick={(event) => click(!clicked)}
+              onClick={setClick}
               onPointerOver={(event) => (event.stopPropagation(), hover(true))}
               onPointerOut={(event) => hover(false)}
           >

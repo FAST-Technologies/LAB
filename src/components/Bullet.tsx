@@ -4,14 +4,29 @@ Command: npx gltfjsx@6.2.15 Pula.glb
 */
 
 
-import { useRef } from 'react'
+import {useRef, useState} from 'react'
 import { useGLTF } from '@react-three/drei'
 
 const Bullet = (props: any) => {
   const { nodes, materials } = useGLTF('/models/Bullet.glb') as any
+    const [clickas, setClickas] = useState<boolean>(false)
+    const [posin, setPosin] = useState<boolean>(false)
+    const [hovered, hover] = useState<boolean>(false)
+    const getClick = () => {
+        setClickas(!clickas)
+        setPosin(!posin)
+    }
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Cylinder010.geometry} material={materials['Iron with Splashed Paint']} position={[-2.873, 18.092, 2.096]} scale={0.232} />
+      <mesh
+          geometry={nodes.Cylinder010.geometry}
+          material={materials['Iron with Splashed Paint']}
+          position={posin ? [-4, 18, 4] : [-2.873, 18.092, 2.096]}
+          scale={clickas ? 0.4 : 0.232}
+          onClick={getClick}
+          onPointerOver={(event) => (event.stopPropagation(), hover(true))}
+          onPointerOut={(event) => hover(false)}
+      />
     </group>
   )
 }
