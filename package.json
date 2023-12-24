@@ -22,6 +22,8 @@
     "react": "^18.2.0",
     "typescript": "^4.9.5",
     "leva": "^0.9.16",
+    "react-useanimations": "^2.10.0",
+    "r3f-perf": "^7.1.2",
     "react-fragment": "^1.0.0",
     "glsl-noise": "^0.0.0",
     "react-dom": "^18.2.0",

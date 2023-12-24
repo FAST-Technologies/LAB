@@ -32,30 +32,16 @@ import {Physics} from "@react-three/cannon";
 import useAudioHook from "./functionalComponents/useAudioHook";
 import * as THREE from "three"
 
-function App() {
+function App(props: any) {
   const [loaded, setLoaded] = useState(false)
-  const audio = useAudioHook((state: any)=>state.audio)
-  const secretSound = useMemo(()=> new Audio('/sounds/Sirona.mp3'),[])
-  const minorSound = useMemo(()=> new Audio('/sounds/Blasterjaxx.mp3'),[])
-  function onPlay () {
-    secretSound.play()
-    minorSound.play()
-  }
 
-  useEffect(()=>{
-    secretSound.muted = !audio
-    minorSound.muted = !audio
-  }, [audio])
   return (
       <Canvas
           shadows
           dpr={[1, 5]}
           camera={{ fov: 75, position: [10, 10, 8]}}
       >
-        <RigidBody
 
-            onContactForce={onPlay}
-        />
         {/*<OrthographicCamera makeDefault position={[0, 0, 1]} />*/}
         <OrbitControls />
         <color attach="background" args={['#1e2243']} />
@@ -65,6 +51,11 @@ function App() {
         <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
         <Suspense fallback={null}>
             <Physics>
+              {/*<RigidBody*/}
+              {/*    friction={1}*/}
+              {/*    onContactForce={onPlay}*/}
+              {/*    {...props}*/}
+              {/*>*/}
               <Fireflies count={50} />
               <Table shadows/>
               <DeskWithSurface/>
@@ -88,6 +79,7 @@ function App() {
               <PowerSocket/>
               <RegulatorWheel/>
               <RegulatorBase/>
+              {/*</RigidBody>*/}
             </Physics>
         </Suspense>
         <gridHelper
