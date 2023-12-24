@@ -4,11 +4,13 @@ Command: npx gltfjsx@6.2.15 contact_road_for_gun.glb
 */
 
 
-import { useRef } from 'react'
+import {useRef, useState} from 'react'
 import { useGLTF } from '@react-three/drei'
 
 const ContactRoad = (props: any) => {
   const { nodes, materials } = useGLTF('/models/ContactRoad.glb') as any
+    const [hover, setHover]=useState<boolean>(false)
+    const [click, setClick]=useState<boolean>(false)
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Основа_контакта_2.geometry} material={materials['Material.007']} position={[-5.599, 20.136, 4.637]} rotation={[-Math.PI / 2, 0, -Math.PI]} scale={[-0.047, -0.003, -0.047]} />

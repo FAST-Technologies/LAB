@@ -4,13 +4,15 @@ Command: npx gltfjsx@6.2.15 Automat.glb
 */
 
 
-import { useRef } from 'react'
+import {useRef, useState} from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import { Group } from 'three'
 
 const Automatic = (props: any) => {
   const group = useRef<Group>(null)
   const { nodes, materials, animations } = useGLTF('/models/Automatic.glb') as any
+  const [hover, setHover]=useState<boolean>(false)
+  const [click, setClick]=useState<boolean>(false)
   const { actions } = useAnimations(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>

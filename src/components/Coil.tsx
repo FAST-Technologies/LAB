@@ -4,11 +4,13 @@ Command: npx gltfjsx@6.2.15 katushka.glb
 */
 
 
-import { useRef } from 'react'
+import {useRef, useState} from 'react'
 import { useGLTF } from '@react-three/drei'
 
 const Coil = (props: any) => {
   const { nodes, materials } = useGLTF('/models/Coil.glb') as any
+    const [hover, setHover]=useState<boolean>(false)
+    const [click, setClick]=useState<boolean>(false)
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Катушка.geometry} material={materials['Material.010']} position={[-5.86, 20.089, 5.566]} scale={[0.044, 0.038, 0.038]} />

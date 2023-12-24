@@ -4,11 +4,13 @@ Command: npx gltfjsx@6.2.15 contaktsCondera.glb
 */
 
 
-import { useRef } from 'react'
+import {useRef, useState} from 'react'
 import { useGLTF } from '@react-three/drei'
 
 const CapacitorContacts = (props: any) => {
   const { nodes, materials } = useGLTF('/models/CapacitorContacts.glb') as any
+    const [hover, setHover]=useState<boolean>(false)
+    const [click, setClick]=useState<boolean>(false)
   return (
     <group {...props} dispose={null}>
       <group position={[6.71, 18.438, -1.067]} rotation={[-Math.PI / 2, 0, -Math.PI / 2]} scale={[-0.099, -0.007, -0.099]}>

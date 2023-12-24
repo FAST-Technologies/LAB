@@ -4,11 +4,13 @@ Command: npx gltfjsx@6.2.15 stoika_with_plata.glb
 */
 
 
-import { useRef } from 'react'
+import {useRef, useState} from 'react'
 import { useGLTF } from '@react-three/drei'
 
 const DeskWithSurface = (props: any) => {
   const { nodes, materials } = useGLTF('/models/DeskWithSurface.glb') as any
+    const [hover, setHover]=useState<boolean>(false)
+    const [click, setClick]=useState<boolean>(false)
   return (
     <group {...props} dispose={null}>
       <group position={[-5.917, 19.989, 4.629]} scale={[0.683, 0.331, 0.008]}>

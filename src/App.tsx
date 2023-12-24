@@ -1,6 +1,7 @@
-import { Suspense } from 'react'
+import {Suspense, useEffect, useMemo} from 'react'
 import { OrbitControls } from '@react-three/drei'
 import {Plane, OrthographicCamera} from "@react-three/drei";
+import {RigidBody} from '@react-three/rapier'
 import { Canvas } from '@react-three/fiber'
 import {useState} from "react"
 import Model from './components/Model'
@@ -28,15 +29,33 @@ import WiresForAutomatRegulator from './components/WiresForAutomatRegulator'
 import Capacitor from './components/Capacitor'
 import Fireflies from './components/Fireflies'
 import {Physics} from "@react-three/cannon";
+import useAudioHook from "./functionalComponents/useAudioHook";
+import * as THREE from "three"
 
 function App() {
   const [loaded, setLoaded] = useState(false)
+  const audio = useAudioHook((state: any)=>state.audio)
+  const secretSound = useMemo(()=> new Audio('/sounds/Sirona.mp3'),[])
+  const minorSound = useMemo(()=> new Audio('/sounds/Blasterjaxx.mp3'),[])
+  function onPlay () {
+    secretSound.play()
+    minorSound.play()
+  }
+
+  useEffect(()=>{
+    secretSound.muted = !audio
+    minorSound.muted = !audio
+  }, [audio])
   return (
       <Canvas
           shadows
           dpr={[1, 5]}
           camera={{ fov: 75, position: [10, 10, 8]}}
       >
+        <RigidBody
+
+            onContactForce={onPlay}
+        />
         {/*<OrthographicCamera makeDefault position={[0, 0, 1]} />*/}
         <OrbitControls />
         <color attach="background" args={['#1e2243']} />

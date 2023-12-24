@@ -4,11 +4,13 @@ Command: npx gltfjsx@6.2.15 stoiki_for_gun.glb
 */
 
 
-import { useRef } from 'react'
+import {useRef, useState} from 'react'
 import { useGLTF } from '@react-three/drei'
 
 const DeskForGun = (props: any) => {
   const { nodes, materials } = useGLTF('/models/DeskForGun.glb') as any
+    const [hover, setHover]=useState<boolean>(false)
+    const [click, setClick]=useState<boolean>(false)
   return (
     <group {...props} dispose={null}>
       <group position={[-0.428, 19.01, 5.583]} scale={[0.321, 1.148, 1.148]}>

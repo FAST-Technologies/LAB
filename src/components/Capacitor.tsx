@@ -4,19 +4,21 @@ Command: npx gltfjsx@6.2.15 Condensator.glb
 */
 
 
-import { useRef } from 'react'
+import {useRef, useState} from 'react'
 import { useGLTF } from '@react-three/drei'
 
 const Capacitor = (props: any) => {
-  const { nodes, materials } = useGLTF('/models/Capacitor.glb') as any
-  return (
-    <group {...props} dispose={null}>
-      <group position={[7.443, 18.956, -0.889]} rotation={[3.131, -Math.PI / 2, 0]} scale={0.512}>
-        <mesh geometry={nodes.Cylinder013.geometry} material={materials['Material.018']} />
-        <mesh geometry={nodes.Cylinder013_1.geometry} material={materials['Material.019']} />
-      </group>
-    </group>
-  )
+    const { nodes, materials } = useGLTF('/models/Capacitor.glb') as any
+    const [hover, setHover]=useState<boolean>(false)
+    const [click, setClick]=useState<boolean>(false)
+    return (
+        <group {...props} dispose={null}>
+          <group position={[7.443, 18.956, -0.889]} rotation={[3.131, -Math.PI / 2, 0]} scale={0.512}>
+            <mesh geometry={nodes.Cylinder013.geometry} material={materials['Material.018']} />
+            <mesh geometry={nodes.Cylinder013_1.geometry} material={materials['Material.019']} />
+          </group>
+        </group>
+    )
 }
 
 export default Capacitor
