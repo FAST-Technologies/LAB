@@ -29,6 +29,7 @@ import WiresForAutomatRegulator from './components/WiresForAutomatRegulator'
 import Capacitor from './components/Capacitor'
 import Fireflies from './components/Fireflies'
 import {Physics} from "@react-three/cannon";
+import Buttons from "./components/Buttons";
 import useAudioHook from "./functionalComponents/useAudioHook";
 import * as THREE from "three"
 
@@ -71,6 +72,7 @@ function App(props: any) {
               <CapacitorContacts/>
               <CapacitorSurface/>
               <Coil/>
+              <Buttons/>
               <ContactRoad/>
               <DeskForGun/>
               <GunsTrunk/>
