@@ -69,8 +69,7 @@ function App(props: any) {
                 <WiresForAutomatRegulator/>
                 <Floor/>
                 <Automatic/>
-                <Bullet/>
-                <CapacitorContacts/>
+                <Bullet position={[-4,18,4]} {...props}/>           <CapacitorContacts/>
                 <CapacitorSurface/>
                 <Coil/>
                 <Buttons/>

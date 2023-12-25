@@ -11,26 +11,26 @@ const Buttons = (props: any) => {
     return (
         <group {...props} dispose={null}>
             <mesh geometry={nodes.Cube.geometry} material={materials['Material.026']}
-                  position={[-12.416, 17.467, 4.861]} scale={[0.755, 0.178, 0.755]}/>
+                  position={[-12.416, 17.467, 4.861]} scale={[1, 0.2, 1]}/>
             <mesh geometry={nodes.Cylinder.geometry} material={materials['Material.009']}
-                  position={[-12.418, 17.729, 4.861]} scale={[0.493, 0.072, 0.493]}/>
-            <group position={[-12.971, 17.774, 5.47]} rotation={[0, 0, -Math.PI]} scale={[-0.069, -0.029, -0.069]}>
+                  position={[-12.418, 17.729, 4.861]} scale={[0.5, 0.1, 0.5]}/>
+            <group position={[-12.971, 17.774, 5.47]} rotation={[0, 0, -Math.PI]} scale={[-0.1, -0.1, -0.1]}>
                 <mesh geometry={nodes['Изолятор_контакта_#1007_1'].geometry} material={materials['Material.009']}/>
                 <mesh geometry={nodes['Изолятор_контакта_#1007_2'].geometry} material={materials['Material.007']}/>
             </group>
-            <group position={[-11.848, 17.774, 5.47]} rotation={[0, 0, -Math.PI]} scale={[-0.069, -0.029, -0.069]}>
+            <group position={[-11.848, 17.774, 5.47]} rotation={[0, 0, -Math.PI]} scale={[-0.1, -0.1, -0.1]}>
                 <mesh geometry={nodes['Изолятор_контакта_#1008_1'].geometry} material={materials['Material.009']}/>
                 <mesh geometry={nodes['Изолятор_контакта_#1008_2'].geometry} material={materials['Material.007']}/>
             </group>
             <mesh geometry={nodes.Cube089.geometry} material={materials['Material.026']}
-                  position={[-5.748, 17.467, 4.957]} scale={[0.755, 0.178, 0.755]}/>
+                  position={[-5.748, 17.467, 4.957]} scale={[1, 0.2, 1]}/>
             <mesh geometry={nodes.Cylinder003.geometry} material={materials['Material.009']}
-                  position={[-5.75, 17.729, 4.957]} scale={[0.493, 0.072, 0.493]}/>
-            <group position={[-5.164, 17.774, 4.416]} rotation={[0, 0, -Math.PI]} scale={[-0.069, -0.029, -0.069]}>
+                  position={[-5.75, 17.729, 4.957]} scale={[0.5, 0.1, 0.5]}/>
+            <group position={[-5.164, 17.774, 4.416]} rotation={[0, 0, -Math.PI]} scale={[-0.1, -0.1, -0.1]}>
                 <mesh geometry={nodes['Изолятор_контакта_#1010_1'].geometry} material={materials['Material.009']}/>
                 <mesh geometry={nodes['Изолятор_контакта_#1010_2'].geometry} material={materials['Material.007']}/>
             </group>
-            <group position={[-5.18, 17.774, 5.566]} rotation={[0, 0, -Math.PI]} scale={[-0.069, -0.029, -0.069]}>
+            <group position={[-5.18, 17.774, 5.566]} rotation={[0, 0, -Math.PI]} scale={[-0.1, -0.1, -0.1]}>
                 <mesh geometry={nodes['Изолятор_контакта_#1011_1'].geometry} material={materials['Material.009']}/>
                 <mesh geometry={nodes['Изолятор_контакта_#1011_2'].geometry} material={materials['Material.007']}/>
             </group>

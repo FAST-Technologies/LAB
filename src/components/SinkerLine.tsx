@@ -12,7 +12,18 @@ const SinkerLine = (props: any) => {
     const [click, setClick]=useState<boolean>(false)
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Cylinder009.geometry} material={materials['Material.012']} position={[4.454, 20.094, 5.582]} rotation={[0, 0, -Math.PI / 2]} scale={[0.284, 0.639, 0.284]} />
+      <mesh
+          geometry={nodes.Cylinder009.geometry}
+          material={materials['Material.012']}
+          position={[4.454, 20.094, 5.582]}
+          rotation={[0, 0, -Math.PI / 2]}
+          scale={[0.284, 0.639, 0.284]}
+          onPointerOver={(event) => (event.stopPropagation(), setHover(true))}
+          onPointerOut={(event) => setHover(false)}
+
+      >
+        <meshStandardMaterial color={hover ? 'red' : 'none'}/>
+      </mesh>
     </group>
   )
 }

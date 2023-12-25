@@ -31,9 +31,9 @@ const Table = (props: any) => {
               onPointerOver={(event) => (event.stopPropagation(), hover(true))}
               onPointerOut={(event) => hover(false)}
           >
-              {/*<meshStandardMaterial color={hovered ? 'red' : nodes.table_board.material}/>*/}
+              <meshStandardMaterial color={hovered ? 'red' : nodes.table_board.material}/>
           </mesh>
-          <mesh castShadow geometry={nodes.iron_table.geometry} material={nodes.iron_table.material} position={[15.501, 8.057, 9.781]} scale={[0.523, 8.698, 0.523]} />
+          <mesh geometry={nodes.iron_table.geometry} material={nodes.iron_table.material} position={[15.501, 8.057, 9.781]} scale={[0.523, 8.698, 0.523]} />
       </group>
     )
 }
