@@ -57,30 +57,32 @@ function App(props: any) {
               {/*    onContactForce={onPlay}*/}
               {/*    {...props}*/}
               {/*>*/}
-              <Fireflies count={50} />
-              <Table shadows/>
-              <DeskWithSurface/>
-              {/*<Walls/>*/}
-              <Capacitor/>
-              <SinkerLine/>
-              <Voltmeter/>
-              <WiresForAutomatic/>
-              <WiresForAutomatRegulator/>
-              <Floor/>
-              <Automatic/>
-              <Bullet/>
-              <CapacitorContacts/>
-              <CapacitorSurface/>
-              <Coil/>
-              <Buttons/>
-              <ContactRoad/>
-              <DeskForGun/>
-              <GunsTrunk/>
-              <LightBulb/>
-              <PendulumBasis/>
-              <PowerSocket/>
-              <RegulatorWheel/>
-              <RegulatorBase/>
+              <group position={[0,0,0]}>
+                <Fireflies count={50} />
+                <Table shadows/>
+                <DeskWithSurface/>
+                {/*<Walls/>*/}
+                <Capacitor/>
+                <SinkerLine/>
+                <Voltmeter/>
+                <WiresForAutomatic/>
+                <WiresForAutomatRegulator/>
+                <Floor/>
+                <Automatic/>
+                <Bullet/>
+                <CapacitorContacts/>
+                <CapacitorSurface/>
+                <Coil/>
+                <Buttons/>
+                <ContactRoad/>
+                <DeskForGun/>
+                <GunsTrunk/>
+                <LightBulb/>
+                <PendulumBasis/>
+                <PowerSocket/>
+                <RegulatorWheel/>
+                <RegulatorBase/>
+              </group>
               {/*</RigidBody>*/}
             </Physics>
         </Suspense>
