@@ -4,6 +4,7 @@ import {Plane, OrthographicCamera} from "@react-three/drei";
 import {RigidBody} from '@react-three/rapier'
 import { Canvas } from '@react-three/fiber'
 import {useState} from "react"
+import Woltmeter from "./newcomponents/Woltmeter";
 import Model from './components/Model'
 import Table from './components/Table'
 import Automatic from './components/Automatic'
@@ -62,6 +63,7 @@ function App(props: any) {
                 <Table shadows/>
                 <DeskWithSurface/>
                 {/*<Walls/>*/}
+                <Woltmeter/>
                 <Capacitor/>
                 <SinkerLine/>
                 <Voltmeter/>
