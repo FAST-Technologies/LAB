@@ -15,8 +15,8 @@ export interface bull {
 import {useRef, useState} from 'react'
 import {useGLTF, useAnimations, Plane} from '@react-three/drei'
 import {useFrame} from "@react-three/fiber";
-
-const Bullet = ({position, color, intensity, orbitalOffset = 0, orbitalSpeed = 1, props}: bull) => {
+// {position, color, intensity, orbitalOffset = 0, orbitalSpeed = 1, props}: bull
+const Bullet = (props: any) => {
     const group=useRef<any>()
   const { nodes, materials, animations } = useGLTF('/models/Bullet.glb') as any
     const [clickas, setClickas] = useState<boolean>(false)
@@ -30,14 +30,14 @@ const Bullet = ({position, color, intensity, orbitalOffset = 0, orbitalSpeed = 1
     const [yposition, setYPosition]=useState<number>(0)
     const [zzposition, setZPosition]=useState<number>(0)
     const ref = useRef<any>();
-    useFrame(() => {
-        let date = Date.now() * orbitalSpeed * 0.001 + orbitalOffset;
-        ref.current.position.set(
-            Math.cos(date) * 2 + position[0],
-            Math.sin(date) * 2 + position[1],
-            Math.sin(date) * 2 + position[2]
-        );
-    });
+    // useFrame(() => {
+    //     let date = Date.now() * orbitalSpeed * 0.001 + orbitalOffset;
+    //     ref.current.position.set(
+    //         Math.cos(date) * 2 + position[0],
+    //         Math.sin(date) * 2 + position[1],
+    //         Math.sin(date) * 2 + position[2]
+    //     );
+    // });
     console.log(names)
     const getClick = () => {
         setClickas(!clickas)
