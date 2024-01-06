@@ -68,15 +68,21 @@ import Pipe from "./newcomponents/Pipe";
 import Plata from "./newcomponents/Plata";
 import RegulatorBase from "./newcomponents/RegulatorBase";
 import RegulatorButton from "./newcomponents/RegulatorButton";
-import Scene from "./newcomponents/Scene";
+import Scene from "./newcomponents/Scene"
 import Switcher1 from "./newcomponents/Switcher1";
 import Switcher2 from "./newcomponents/Switcher2";
-import Table from "./components/Table";
+import Table from "./newcomponents/Table";
 import Thread from "./newcomponents/Thread";
 import TwoWires from "./newcomponents/TwoWires";
 import Weight from "./newcomponents/Weight";
 import WireClemmRegulator from "./newcomponents/WireClemmRegulator";
 import WireWoltmeterGegulator from "./newcomponents/WireWoltmeterGegulator";
+import {Clemm2} from "./newcomponents/Clemm2";
+import RegulatorBase2 from "./newcomponents/RegulatorBase2";
+import ClemmButton from "./newcomponents/ClemmButton";
+import Stol from "./newcomponents/Stol";
+import Stol_2 from "./newcomponents/Stol_2";
+import Stol_3 from "./newcomponents/Stol_3";
 
 function App(props: any) {
   const [loaded, setLoaded] = useState(false)
@@ -116,8 +122,11 @@ function App(props: any) {
                 <CannonLegs/>
                 <CapacitorPlata/>
                 <Capacitor/>
-                <CapContact1/>
+                <ClemmButton/>
+                {/*<CapContact1/>*/}
+                <Stol/>
                 <Clemm/>
+                <Clemm2/>
                 <Coil/>
                 <Contact1/>
                 <Contact1Button1/>
@@ -138,12 +147,14 @@ function App(props: any) {
                 <Pendulum/>
                 <Pipe/>
                 <Plata/>
-                <RegulatorBase/>
+                <RegulatorBase2/>
                 <RegulatorButton/>
                 <Scene/>
                 <Switcher1/>
                 <Switcher2/>
-                <Table/>
+                {/*<Table/>*/}
+                {/*<Stol_2/>*/}
+                {/*<Stol_3/>*/}
                 <Thread/>
                 <TwoWires/>
                 <Weight/>
