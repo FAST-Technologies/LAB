@@ -10,8 +10,8 @@ const Scene= (props: any) => {
   const { nodes, materials } = useGLTF('/newmodels/Scene.gltf') as any
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Plane001.geometry} material={materials['Wood Flooring']} position={[-1.416, 0.469, 6.603]} scale={80.313} />
-      <mesh geometry={nodes.Plane002.geometry} material={materials['Striped Wallpaper']} position={[0.19, 80.379, -73.925]} rotation={[Math.PI / 2, 0, 0]} scale={[84.002, 86.971, 86.971]} />
+      <mesh geometry={nodes.Plane001.geometry} material={materials['Wood Flooring']} position={[-1.416, -1.1, 6.603]} scale={500.313} />
+      <mesh geometry={nodes.Plane002.geometry} material={materials['Striped Wallpaper']} position={[0.19, 80.379, -73.925]} rotation={[Math.PI / 2, 0, 0]} scale={[1084.002, 1086.971, 1086.971]} />
       <mesh geometry={nodes.Plane003.geometry} material={materials['Striped Wallpaper']} position={[78.17, 79.863, 5.752]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[83.909, 86.772, 86.772]} />
       <mesh geometry={nodes.Plane004.geometry} material={materials['Striped Wallpaper']} position={[-81.567, 80.379, 6.529]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={84.414} />
       <mesh geometry={nodes.Plane005.geometry} material={materials['Striped Wallpaper']} position={[0.331, 80.379, 86.206]} rotation={[Math.PI / 2, 0, Math.PI]} scale={[84.417, 85.869, 85.869]} />
@@ -297,7 +297,7 @@ const Scene= (props: any) => {
       </group>
       <group position={[-17.536, 25.827, 85.828]} rotation={[Math.PI, 0, Math.PI]} scale={24.757}>
         <mesh geometry={nodes.Cube001.geometry} material={materials.wood} />
-        <mesh geometry={nodes.Cube001_1.geometry} material={materials.glass} />
+        {/*<mesh geometry={nodes.Cube001_1.geometry} material={materials.glass} />*/}
         <mesh geometry={nodes.Cube001_2.geometry} material={materials.iron} />
         <mesh geometry={nodes.Cube001_3.geometry} material={materials['sheet metal']} />
         <mesh geometry={nodes.Cube001_4.geometry} material={materials.hlinik} />
@@ -305,7 +305,7 @@ const Scene= (props: any) => {
       </group>
       <group position={[5.186, 25.827, 85.828]} rotation={[Math.PI, 0, Math.PI]} scale={24.757}>
         <mesh geometry={nodes.Cube040_1.geometry} material={materials.wood} />
-        <mesh geometry={nodes.Cube040_2.geometry} material={materials.glass} />
+        {/*<mesh geometry={nodes.Cube040_2.geometry} material={materials.glass} />*/}
         <mesh geometry={nodes.Cube040_3.geometry} material={materials.iron} />
         <mesh geometry={nodes.Cube040_4.geometry} material={materials['sheet metal']} />
         <mesh geometry={nodes.Cube040_5.geometry} material={materials.hlinik} />

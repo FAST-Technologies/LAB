@@ -1,5 +1,5 @@
 import {Suspense, useEffect, useMemo} from 'react'
-import { OrbitControls } from '@react-three/drei'
+import {OrbitControls, PointerLockControls} from '@react-three/drei'
 import {Plane, OrthographicCamera} from "@react-three/drei";
 import {RigidBody} from '@react-three/rapier'
 import { Canvas } from '@react-three/fiber'
@@ -83,10 +83,26 @@ import ClemmButton from "./newcomponents/ClemmButton";
 import Stol from "./newcomponents/Stol";
 import Stol_2 from "./newcomponents/Stol_2";
 import Stol_3 from "./newcomponents/Stol_3";
+import Fon from "./newcomponents/Fon";
+import Stol_4 from "./newcomponents/Stol_4";
+import {Stol_5} from "./newcomponents/Stol_5";
+import {Stats} from "@react-three/drei";
+import {Perf} from "r3f-perf"
+import {useControls} from "leva";
 
 function App(props: any) {
   const [loaded, setLoaded] = useState(false)
-
+  const options = useMemo(()=>{
+    return{
+      x: {value: 0, min: 0, max: 20, step: 0.01},
+      y: {value: 0, min: 0, max: 20, step: 0.01},
+      z: {value: 0, min: 0, max: 20, step: 0.01},
+      visible: true,
+      color: {value: '#1e2243'}
+    }
+  },[])
+  const Table = useControls("Table", options)
+  const Woltmeterd=useControls("Woltmeter", options)
   return (
       <Canvas
           shadows
@@ -95,12 +111,13 @@ function App(props: any) {
       >
 
         {/*<OrthographicCamera makeDefault position={[0, 0, 1]} />*/}
-        <OrbitControls />
-        <color attach="background" args={['#1e2243']} />
+        <OrbitControls enablePan={false} enableDamping={false}/>
+        <color attach="background" args={[options.color.value]} />
         <hemisphereLight intensity={0.65}/>
         <ambientLight intensity={Math.PI / 2} />
         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
         <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
+        {/*<primitive object={gltf.scene} position={[0,0,0]}/>*/}
         <Suspense fallback={null}>
             <Physics>
               {/*<RigidBody*/}
@@ -118,13 +135,16 @@ function App(props: any) {
                 <BaseButton1/>
                 <Bullet/>
                 <Button/>
+                <Fon/>
                 <Button1/>
                 <CannonLegs/>
                 <CapacitorPlata/>
                 <Capacitor/>
                 <ClemmButton/>
                 {/*<CapContact1/>*/}
-                <Stol/>
+                {/*<Stol_4/>*/}
+                <Stol position={[Table.x, Table.y, Table.z]} visible={Table.visible} color={Table.color}/>
+                {/*<Stol_5/>*/}
                 <Clemm/>
                 <Clemm2/>
                 <Coil/>
@@ -168,6 +188,10 @@ function App(props: any) {
             args={[200, 100, '#1100ff', '#1100ff']}
             position={[0, -1.26, 0]}
         />
+        {/*<PointerLockControls selector="#button"/>*/}
+        <axesHelper args={[30]}/>
+        <Stats/>
+        <Perf position="bottom-right"/>
       </Canvas>
   )
 }
