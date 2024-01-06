@@ -4,15 +4,40 @@ Command: npx gltfjsx@6.2.16 WolmeterGlass.gltf
 */
 
 import React, {useRef, useState} from 'react'
+import styles from "./Woltmeter.module.css"
 import { useGLTF } from '@react-three/drei'
 
 const WoltmeterGlass = (props: any) => {
+    const ref = useRef() as any
   const { nodes, materials } = useGLTF('/newmodels/WolmeterGlass.gltf') as any
+    const [data, setData] = useState<number>(0)
+    const [click, setClick] = useState<boolean>(false)
+    const [colord, setColor] = useState<boolean>(false)
+    const getClick = () => {
+        setClick(!click)
+        // setColor(!colord)
+        if (click) {
+            return (
+                <p className={styles.datee}>Начальное значение {data} Вольт</p>
+            )
+        }
+    }
+
+    const changeData = () => {
+        if (!click) {
+            return (
+
+                <p className={styles.datee}>Начальное значение {data} Вольт</p>
+            )
+        }
+    }
   return (
-    <group {...props} dispose={null}>
-      <group position={[-12.899, 18.318, 9.178]}>
-        <mesh geometry={nodes.Cube005.geometry} material={materials['Material.012']} />
-        <mesh geometry={nodes.Cube005_1.geometry} material={materials['Material.020']} />
+    <group {...props}  dispose={null}>
+      <group  position={[-12.899, 18.318, 9.178]}>
+        <mesh  geometry={nodes.Cube005.geometry} material={materials['Material.012']} />
+        <mesh ref={ref} onClick={getClick} geometry={nodes.Cube005_1.geometry} material={materials['Material.020']} >
+            {/*<meshStandardMaterial color={colord ? "green" : "blue"}/>*/}
+        </mesh>
       </group>
     </group>
   )

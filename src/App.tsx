@@ -1,5 +1,5 @@
-import {Suspense, useEffect, useMemo} from 'react'
-import {OrbitControls, PointerLockControls} from '@react-three/drei'
+import React, {Suspense, useEffect, useMemo} from 'react'
+import {Html, OrbitControls, PointerLockControls} from '@react-three/drei'
 import {Plane, OrthographicCamera} from "@react-three/drei";
 import {RigidBody} from '@react-three/rapier'
 import { Canvas } from '@react-three/fiber'
@@ -86,12 +86,51 @@ import Stol_3 from "./newcomponents/Stol_3";
 import Fon from "./newcomponents/Fon";
 import Stol_4 from "./newcomponents/Stol_4";
 import {Stol_5} from "./newcomponents/Stol_5";
-import {Stats} from "@react-three/drei";
+import {Stats, Environment, useGLTF} from "@react-three/drei";
 import {Perf} from "r3f-perf"
 import {useControls} from "leva";
+// import Model1 from "./newcomponents/Model1";
+export type bull = {
+  classic: string,
+  round: string
+}
+
+const bullets: bull = {
+  classic: "/newmodels/Bullet.gltf",
+  round: "/newmodels/RoundBullet.gltf"
+}
+
+// const Model1 = ( {url} ) => {
+//   const { scene } = useGLTF(url) as any
+//   const [cache, setCache] = useState<any>({})
+//
+//   if (!cache[url]) {
+//     const annotations: any[] = []
+//
+//     scene.traverse((o: any) => {
+//       if (o.userData.prop) {
+//         annotations.push(
+//             <Html key={o.uuid} position={[o.position.x, o.position.y, o.position.z]} distanceFactor={1.25}>
+//               <div className="annotation">{o.userData.prop}</div>
+//             </Html>
+//         )
+//       }
+//     })
+//
+//     console.log('Caching JSX for url ' + url)
+//     setCache({
+//       ...cache,
+//       [url]: <primitive object={scene}>{annotations}</primitive>
+//     })
+//   }
+//   return cache[url]
+// }
+
 
 function App(props: any) {
   const [loaded, setLoaded] = useState(false)
+
+
   const options = useMemo(()=>{
     return{
       x: {value: 0, min: 0, max: 20, step: 0.01},
@@ -103,13 +142,24 @@ function App(props: any) {
   },[])
   const Table = useControls("Table", options)
   const Woltmeterd=useControls("Woltmeter", options)
+  const model = useControls("Bullet", {
+        model: {
+          value: "classic",
+          option: Object.keys(bullets)
+        }
+      }
+      )
+  // @ts-ignore
   return (
+      <>
       <Canvas
           shadows
           dpr={[1, 5]}
           camera={{ fov: 75, position: [10, 10, 8]}}
       >
-
+        {/*<group>*/}
+        {/*  <Model1 url={bullets[model]}/>*/}
+        {/*</group>*/}
         {/*<OrthographicCamera makeDefault position={[0, 0, 1]} />*/}
         <OrbitControls enablePan={false} enableDamping={false}/>
         <color attach="background" args={[options.color.value]} />
@@ -193,6 +243,8 @@ function App(props: any) {
         <Stats/>
         <Perf position="bottom-right"/>
       </Canvas>
+      {/*<span id="info">The {model.replace(/([A-Z])/g, ' $1').toLowerCase()} is selected.</span>*/}
+      </>
   )
 }
 

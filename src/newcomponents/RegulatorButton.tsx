@@ -10,10 +10,25 @@ const RegulatorButton = (props: any) => {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/newmodels/RegulatorButton.gltf') as any
   const { actions } = useAnimations(animations, group)
+    const [click, setClick] = useState<boolean>(false)
+    const [active, setActive] = useState<boolean>(false)
+    const getButton = () => {
+      setClick(!click)
+        setActive(!active)
+    }
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
-        <mesh name="Регулятор_напряжения" geometry={nodes.Регулятор_напряжения.geometry} material={materials['Material.011']} position={[-14.923, 17.977, 4.908]} scale={[0.608, 0.09, 0.608]} />
+        <mesh
+            name="Регулятор_напряжения"
+            geometry={nodes.Регулятор_напряжения.geometry}
+            material={materials['Material.011']}
+            position={!click ? [-14.923, 17.877, 4.908] : [-14.923, 17.977, 4.908]}
+            scale={[0.608, 0.09, 0.608]}
+            onClick={getButton}
+        >
+            <meshStandardMaterial  color={!active ? "red" : "black"}/>
+        </mesh>
       </group>
     </group>
   )

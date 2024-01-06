@@ -11,10 +11,20 @@ const Switcher2 = (props: any) => {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/newmodels/Switcher2.gltf') as any
   const { actions } = useAnimations(animations, group)
+    const [click, setClick] = useState(false)
+    const getClick = () => {
+        setClick(!click)
+    }
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
-        <mesh name="Cylinder002" geometry={nodes.Cylinder002.geometry} material={materials['Material.011']} position={[-15.582, 18.066, 7.956]} rotation={[-2.899, 0, -Math.PI / 2]} scale={[-0.097, -0.193, -0.097]} />
+        <mesh name="Cylinder002" geometry={nodes.Cylinder002.geometry}
+              material={materials['Material.011']}
+              position={[-15.582, 18.066, 7.956]}
+              rotation={!click ? [-2.899+1.3, 0, -Math.PI/2] : [-2.899, 0, -Math.PI / 2]}
+              scale={[-0.097, -0.193, -0.097]}
+              onClick={getClick}
+        />
       </group>
     </group>
   )

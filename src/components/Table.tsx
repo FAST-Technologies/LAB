@@ -11,6 +11,7 @@ const Table = (props: any) => {
 // Hold state for hovered and clicked events
     const [hovered, hover] = useState<boolean>(false)
     const [clicked, click] = useState<boolean>(false)
+
     const { nodes, materials } = useGLTF('/models/Table.glb') as any
     const setClick = () => {
         click(!clicked)
