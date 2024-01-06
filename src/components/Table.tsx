@@ -22,7 +22,7 @@ const Table = (props: any) => {
               castShadow
               geometry={nodes.table_board.geometry}
               material={nodes.table_board.material}
-              position={[-0.295, 17.626, -1.117]}
+              position={[-0.295, 15.626, -1.117]}
               // scale={clicked ? [2, 2.649, 2] : [1, 1.649, 1]}
               scale={[1, 1.649, 1]}
               ref={ref}
