@@ -12,7 +12,7 @@ const Automatic = (props: any) => {
   return (
     <group {...props} dispose={null}>
       <group
-          position={[-15.241, 17.866, 7.958]}
+          position={[-15.241, 17.866, -16.858]}
           rotation={[0, Math.PI / 2, 0]}
           scale={[0.451, 0.188, 0.566]}
       >

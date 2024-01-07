@@ -10,7 +10,12 @@ const AutomaticWire = (props: any) => {
   const { nodes, materials } = useGLTF('/newmodels/AutomaticWire.gltf') as any
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Провод_питания001.geometry} material={materials['Material.015']} position={[-14.752, 17.488, 9.428]} scale={[0.686, 1.042, 0.686]} />
+      <mesh
+          geometry={nodes.Провод_питания001.geometry}
+          material={materials['Material.015']}
+          position={[-14.752, 17.488, -15.228]}
+          scale={[0.686, 1.042, 0.686]}
+      />
     </group>
   )
 }

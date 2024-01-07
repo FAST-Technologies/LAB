@@ -8,12 +8,23 @@ import { useGLTF } from '@react-three/drei'
 
 const Lamp = (props: any) => {
   const { nodes, materials } = useGLTF('/newmodels/Lamp.gltf') as any
+    const ref = useRef() as any
+    const [hovered, setHovered] = useState<boolean>(false)
   return (
     <group {...props} dispose={null}>
-      <group position={[-7.725, 17.77, 4.851]} scale={0.225}>
+      <group
+          ref={ref}
+          position={[-7.725, 17.77, -19.851]}
+          scale={0.225}
+          onPointerOver={(event) => (event.stopPropagation(), setHovered(true))}
+          onPointerOut={(event) => setHovered(false)}
+      >
+
         <mesh geometry={nodes.Cylinder015.geometry} material={materials['Material.011']} />
         <mesh geometry={nodes.Cylinder015_1.geometry} material={materials['Material.012']} />
-        <mesh geometry={nodes.Cylinder015_2.geometry} material={materials['Material.014']} />
+        <mesh geometry={nodes.Cylinder015_2.geometry} material={materials['Material.014']}>
+            <meshStandardMaterial color={hovered ? 'yellow' : 'grey'} wireframe/>
+        </mesh>
       </group>
     </group>
   )

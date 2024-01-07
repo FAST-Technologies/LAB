@@ -10,7 +10,7 @@ const Contact1 = (props: any) => {
   const { nodes, materials } = useGLTF('/newmodels/Contact1.gltf') as any
   return (
     <group {...props} dispose={null}>
-      <group position={[0.045, 19.582, 5.689]} rotation={[-Math.PI / 2, 0, -Math.PI]} scale={[-0.044, -0.018, -0.044]}>
+      <group position={[0.045, 19.582, -19.689]} rotation={[-Math.PI / 2, 0, -Math.PI]} scale={[-0.044, -0.018, -0.044]}>
         <mesh geometry={nodes['Изолятор_контакта_#1005_1'].geometry} material={materials['Material.009']} />
         <mesh geometry={nodes['Изолятор_контакта_#1005_2'].geometry} material={materials['Material.007']} />
       </group>

@@ -24,7 +24,11 @@ const Bullet = (props: any) => {
   const { nodes, materials } = useGLTF('/newmodels/Bullet.gltf') as any
   return (
     <group position={[Bullett.x, Bullett.y, Bullett.z]} visible={Bullett.visible} color={Bullett.color} {...props} dispose={null}>
-      <mesh geometry={nodes.Cylinder010.geometry} material={materials['Iron with Splashed Paint']} position={[-1.69, 17.507, 5.664]} scale={0.232} />
+      <mesh
+          geometry={nodes.Cylinder010.geometry}
+          material={materials['Iron with Splashed Paint']}
+          position={[-1.69, 17.507, -18.664]}
+          scale={0.232} />
     </group>
   )
 }

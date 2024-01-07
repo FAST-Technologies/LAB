@@ -10,7 +10,7 @@ const CannonLegs = (props: any) => {
   const { nodes, materials } = useGLTF('/newmodels/CannonLegs.gltf') as any
   return (
     <group {...props} dispose={null}>
-      <group position={[5.855, 18.456, 6.67]} scale={[0.321, 1.148, 1.148]}>
+      <group position={[5.855, 18.456, -18.67]} scale={[0.321, 1.148, 1.148]}>
         <mesh geometry={nodes.Ножка_пушки_1_1.geometry} material={materials['Material.003']} />
         <mesh geometry={nodes.Ножка_пушки_1_2.geometry} material={materials['Material.004']} />
       </group>

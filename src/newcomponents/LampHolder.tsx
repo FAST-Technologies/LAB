@@ -10,7 +10,12 @@ const LampHolder = (props: any) => {
   const { nodes, materials } = useGLTF('/newmodels/LampHolder.gltf') as any
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Cylinder004.geometry} material={materials['Material.002']} position={[-7.728, 17.402, 4.838]} scale={[0.57, 0.051, 0.57]} />
+      <mesh
+          geometry={nodes.Cylinder004.geometry}
+          material={materials['Material.002']}
+          position={[-7.728, 17.402, -19.838]}
+          scale={[0.57, 0.051, 0.57]}
+      />
     </group>
   )
 }

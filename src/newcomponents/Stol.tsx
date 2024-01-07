@@ -34,7 +34,7 @@ const Stol = (props: any) => {
   return (
     <group  {...props} dispose={null}>
       <mesh receiveShadow geometry={nodes.iron_table.geometry} material={materials['Artisan oak, kronospan, wood.']}
-            position={[15.501, 8.057, 9.781]}
+            position={[15.501, 8.057, -14.781]}
             scale={[0.523, 8.698, 0.523]}
             ref={ref} onClick={getClick}
       >

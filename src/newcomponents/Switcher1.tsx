@@ -21,7 +21,7 @@ const Switcher1 = (props: any) => {
             name="Cylinder001"
             geometry={nodes.Cylinder001.geometry}
             material={materials['Material.011']}
-            position={[-14.898, 18.066, 7.957]}
+            position={[-14.898, 18.066, -16.957]}
             rotation={!click ? [-2.899+1.3, 0, -Math.PI/2] :[-2.899, 0, -Math.PI / 2]}
             scale={[-0.097, -0.193, -0.097]}
             onClick={getClick}/>

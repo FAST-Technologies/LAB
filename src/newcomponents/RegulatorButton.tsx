@@ -23,7 +23,7 @@ const RegulatorButton = (props: any) => {
             name="Регулятор_напряжения"
             geometry={nodes.Регулятор_напряжения.geometry}
             material={materials['Material.011']}
-            position={!click ? [-14.923, 17.877, 4.908] : [-14.923, 17.977, 4.908]}
+            position={!click ? [-14.923, 17.877, -19.708] : [-14.923, 17.977, -19.708]}
             scale={[0.608, 0.09, 0.608]}
             onClick={getButton}
         >

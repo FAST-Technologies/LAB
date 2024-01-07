@@ -10,7 +10,12 @@ const RoundBullet = (props: any) => {
   const { nodes, materials } = useGLTF('/newmodels/RoundBullet.gltf') as any
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Cylinder006.geometry} material={materials['Iron with Splashed Paint']} position={[-1.192, 17.491, 5.667]} scale={0.232} />
+      <mesh
+          geometry={nodes.Cylinder006.geometry}
+          material={materials['Iron with Splashed Paint']}
+          position={[-1.192, 17.491, -18.667]}
+          scale={0.232}
+      />
     </group>
   )
 }

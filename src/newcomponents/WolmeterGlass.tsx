@@ -33,9 +33,14 @@ const WoltmeterGlass = (props: any) => {
     }
   return (
     <group {...props}  dispose={null}>
-      <group  position={[-12.899, 18.318, 9.178]}>
+      <group  position={[-12.899, 18.318, -15.378]}>
         <mesh  geometry={nodes.Cube005.geometry} material={materials['Material.012']} />
-        <mesh ref={ref} onClick={getClick} geometry={nodes.Cube005_1.geometry} material={materials['Material.020']} >
+        <mesh
+            ref={ref}
+            onClick={getClick}
+            geometry={nodes.Cube005_1.geometry}
+            material={materials['Material.020']}
+        >
             {/*<meshStandardMaterial color={colord ? "green" : "blue"}/>*/}
         </mesh>
       </group>

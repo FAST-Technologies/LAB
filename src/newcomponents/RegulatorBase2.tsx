@@ -10,7 +10,13 @@ const RegulatorBase2 = (props: any) => {
   const { nodes, materials } = useGLTF('/newmodels/RegulatorBase2.gltf') as any
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Коробка_напряжения.geometry} material={materials.Plastic} position={[-14.893, 17.602, 4.9]} rotation={[0, -1.571, 0]} scale={[1, 0.32, 1]} />
+      <mesh
+          geometry={nodes.Коробка_напряжения.geometry}
+          material={materials.Plastic}
+          position={[-14.893, 17.602, -19.7]}
+          rotation={[0, -1.571, 0]}
+          scale={[1, 0.32, 1]}
+      />
     </group>
   )
 }

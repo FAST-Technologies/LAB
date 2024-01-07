@@ -10,7 +10,12 @@ const Base = (props: any) => {
   const { nodes, materials } = useGLTF('/newmodels/Base.gltf') as any
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Cube.geometry} material={materials['Material.026']} position={[-12.416, 17.467, 4.861]} scale={[0.755, 0.178, 0.755]} />
+      <mesh
+          geometry={nodes.Cube.geometry}
+          material={materials['Material.026']}
+          position={[-12.416, 17.467, -19.861]}
+          scale={[0.755, 0.178, 0.755]}
+      />
     </group>
   )
 }

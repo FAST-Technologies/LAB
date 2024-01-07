@@ -33,9 +33,13 @@ const Woltmeter = (props: any) => {
     }
   return (
     <group {...props}  dispose={null}>
-      <group  position={[-12.899, 18.318, 9.178]}>
+      <group  position={[-12.899, 18.318, -15.378]}>
         <mesh  geometry={nodes.Cube004.geometry} material={materials['Material.021']} />
-        <mesh ref={ref} onClick={getClick}  geometry={nodes.Cube004_1.geometry} material={materials['Material.022']} >
+        <mesh
+            ref={ref}
+            onClick={getClick}
+            geometry={nodes.Cube004_1.geometry}
+            material={materials['Material.022']} >
            {/*<meshStandardMaterial color={colord ? "red" : "blue"}/>*/}
         </mesh>
         <mesh geometry={nodes.Cube004_2.geometry} material={materials['Material.023']} />

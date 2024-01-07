@@ -10,7 +10,12 @@ const Coil = (props: any) => {
   const { nodes, materials } = useGLTF('/newmodels/Coil.gltf') as any
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Катушка.geometry} material={materials['Material.010']} position={[0.423, 19.535, 6.652]} scale={[0.044, 0.038, 0.038]} />
+      <mesh
+          geometry={nodes.Катушка.geometry}
+          material={materials['Material.010']}
+          position={[0.423, 19.535, -18.652]}
+          scale={[0.044, 0.038, 0.038]}
+      />
     </group>
   )
 }

@@ -10,7 +10,13 @@ const WireWoltmeterRegulator = (props: any) => {
   const { nodes, materials } = useGLTF('/newmodels/WireWoltmeterGegulator.gltf') as any
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.wiring_1003.geometry} material={materials['Material.015']} position={[-14.221, 17.483, 6.623]} rotation={[Math.PI / 2, 0, 0]} scale={[0.094, 0.725, 0.094]} />
+      <mesh
+          geometry={nodes.wiring_1003.geometry}
+          material={materials['Material.015']}
+          position={[-14.221, 17.483, -18.023]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={[0.094, 0.725, 0.094]}
+      />
     </group>
   )
 }

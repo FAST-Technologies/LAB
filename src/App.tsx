@@ -154,8 +154,8 @@ function App(props: any) {
       <>
       <Canvas
           shadows
-          dpr={[1, 5]}
-          camera={{ fov: 75, position: [10, 10, 8]}}
+          // dpr={[1, 5]}
+          camera={{ fov: 60, position: [0, 60, -12]}}
       >
         {/*<group>*/}
         {/*  <Model1 url={bullets[model]}/>*/}

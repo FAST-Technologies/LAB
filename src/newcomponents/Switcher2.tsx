@@ -20,7 +20,7 @@ const Switcher2 = (props: any) => {
       <group name="Scene">
         <mesh name="Cylinder002" geometry={nodes.Cylinder002.geometry}
               material={materials['Material.011']}
-              position={[-15.582, 18.066, 7.956]}
+              position={[-15.582, 18.066, -16.956]}
               rotation={!click ? [-2.899+1.3, 0, -Math.PI/2] : [-2.899, 0, -Math.PI / 2]}
               scale={[-0.097, -0.193, -0.097]}
               onClick={getClick}

@@ -10,7 +10,12 @@ const Pipe = (props: any) => {
   const { nodes, materials } = useGLTF('/newmodels/Pipe.gltf') as any
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Цилиндр_пушки.geometry} material={materials['Material.011']} position={[2.87, 19.533, 6.664]} rotation={[0, 0, -Math.PI / 2]} scale={1.619} />
+      <mesh
+          geometry={nodes.Цилиндр_пушки.geometry}
+          material={materials['Material.011']}
+          position={[2.87, 19.533, -18.664]}
+          rotation={[0, 0, -Math.PI / 2]} scale={1.619}
+      />
     </group>
   )
 }
