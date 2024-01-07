@@ -60,6 +60,7 @@ import {Stats, Environment, useGLTF} from "@react-three/drei";
 import {Perf} from "r3f-perf"
 import {useControls} from "leva";
 import Lights from "./newcomponents/Lights";
+import useKeyboardHook from "./functionalComponents/useKeyboardHook";
 // import Model1 from "./newcomponents/Model1";
 
 export type bull = {
@@ -110,6 +111,7 @@ const dd = [
 
 function App(props: any) {
   const [loaded, setLoaded] = useState(false)
+  const keyMap = useKeyboardHook()
 
 
   const options = useMemo(()=>{
@@ -180,6 +182,8 @@ function App(props: any) {
                     position={[Table.x, Table.y, Table.z]}
                     visible={Table.visible}
                     color={Table.color}
+                    keyMap={keyMap}
+                    selected
                 />
                 <Clemm/>
                 <Clemm2/>
