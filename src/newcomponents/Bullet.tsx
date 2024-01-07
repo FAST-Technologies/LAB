@@ -6,8 +6,14 @@ Command: npx gltfjsx@6.2.16 Bullet.gltf
 import React, {useMemo, useRef, useState} from 'react'
 import {Html, useGLTF } from '@react-three/drei'
 import {useControls} from "leva";
+import {useFrame} from "@react-three/fiber"
 
 const Bullet = (props: any) => {
+
+    const ref = useRef() as any
+    const [hover, setHover]= useState<boolean>(false)
+    const [rotate, setRotate] = useState<boolean>(false)
+    const [count, setCount] = useState<number>(0)
     const options = useMemo(()=>{
         return{
             x: {value: 0, min: -1.69, max: 20, step: 0.01},
@@ -17,16 +23,43 @@ const Bullet = (props: any) => {
             color: {value: '#1e2243'}
         }
     },[])
-
+    // console.log(dd)
     const Bullett = useControls("Bullet", options)
     const { nodes, materials } = useGLTF('/newmodels/Bullet.gltf') as any
+    useFrame((i, delta) => {
+        if (rotate) {
+            ref.current.rotation.x += 0.25 * delta
+            ref.current.rotation.y += 0.25 * delta
+            ref.current.rotation.z += 0.25 * delta
+        }
+    })
     return (
-        <group position={[Bullett.x, Bullett.y, Bullett.z]} visible={Bullett.visible} color={Bullett.color} {...props} dispose={null}>
+        <group
+            position={[Bullett.x, Bullett.y, Bullett.z]}
+            visible={Bullett.visible}
+            color={Bullett.color}
+            dispose={null}
+            ref={ref}
+            {...props}
+        >
           <mesh
               geometry={nodes.Cylinder010.geometry}
               material={materials['Iron with Splashed Paint']}
-              position={[-1.69, 17.507, -18.664]}
-              scale={0.232} />
+              position={[-1.69, 21.507, -18.664]}
+              scale={hover ? 0.252 : 0.232}
+              // onPointerDown={(e)=>console.log("pointer down"+e.object.name)}
+              // onPointerUp={(e)=>console.log("pointer up"+e.object.name)}
+              // onPointerOver={(e)=>console.log("pointer over"+e.object.name)}
+              // onPointerOut={(e)=>console.log("pointer out"+e.object.name)}
+              // onUpdate={(self)=>console.log(self)}
+              onPointerDown={()=>setRotate(!rotate)}
+              onPointerOver={()=>setHover(true)}
+              onPointerOut={()=>setHover(false)}
+              // onPointerDown={()=>{
+              //     setCount((count+1)%2)
+              // }}
+              // geometry={dd[count]}
+          />
         </group>
     )
 }

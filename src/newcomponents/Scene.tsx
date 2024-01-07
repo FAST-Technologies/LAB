@@ -10,7 +10,7 @@ const Scene= (props: any) => {
   const { nodes, materials } = useGLTF('/newmodels/Scene.gltf') as any
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Plane001.geometry} material={materials['Wood Flooring']} position={[-1.416, -1.1, 6.603]} scale={500.313} />
+      <mesh geometry={nodes.Plane001.geometry} material={materials['Wood Flooring']} position={[-1.416, -0.1, 6.603]} scale={500.313} />
       <mesh geometry={nodes.Plane002.geometry} material={materials['Striped Wallpaper']} position={[0.19, 80.379, -73.925]} rotation={[Math.PI / 2, 0, 0]} scale={[1084.002, 1086.971, 1086.971]} />
       <mesh geometry={nodes.Plane003.geometry} material={materials['Striped Wallpaper']} position={[78.17, 79.863, 5.752]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[83.909, 86.772, 86.772]} />
       <mesh geometry={nodes.Plane004.geometry} material={materials['Striped Wallpaper']} position={[-81.567, 80.379, 6.529]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={84.414} />

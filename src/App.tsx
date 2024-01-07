@@ -59,6 +59,7 @@ import Fon from "./newcomponents/Fon";
 import {Stats, Environment, useGLTF} from "@react-three/drei";
 import {Perf} from "r3f-perf"
 import {useControls} from "leva";
+import Lights from "./newcomponents/Lights";
 // import Model1 from "./newcomponents/Model1";
 
 export type bull = {
@@ -70,6 +71,15 @@ const bullets: bull = {
   classic: "/newmodels/Bullet.gltf",
   round: "/newmodels/RoundBullet.gltf"
 }
+
+const phd: string[] = [
+  "/newmodels/Bullet.gltf",
+  "/newmodels/RoundBullet.gltf"
+]
+
+const dd = [
+
+]
 
 // const Model1 = ( {url} ) => {
 //   const { scene } = useGLTF(url) as any
@@ -135,11 +145,12 @@ function App(props: any) {
         {/*  <Model1 url={bullets[model]}/>*/}
         {/*</group>*/}
         {/*<OrthographicCamera makeDefault position={[0, 0, 1]} />*/}
-        <OrbitControls enablePan={false} enableDamping={false}/>
+        <OrbitControls enablePan={false} enableDamping={false} target={[2,2,2]}/>
         <color attach="background" args={[options.color.value]} />
+        {/*<Lights/>*/}
         <hemisphereLight intensity={0.65}/>
-        <ambientLight intensity={Math.PI / 2} />
-        <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
+        <ambientLight intensity={Math.PI/2} />
+        <spotLight color="yellow" position={[10, 10, 10]} angle={0.6} penumbra={1} decay={0} intensity={Math.PI} />
         <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
         {/*<primitive object={gltf.scene} position={[0,0,0]}/>*/}
         <Suspense fallback={null}>
@@ -213,7 +224,7 @@ function App(props: any) {
         {/*<PointerLockControls selector="#button"/>*/}
         <axesHelper args={[30]}/>
         <Stats/>
-        <Perf position="bottom-right"/>
+        <Perf position="bottom-left"/>
       </Canvas>
       {/*<span id="info">The {model.replace(/([A-Z])/g, ' $1').toLowerCase()} is selected.</span>*/}
       </>
