@@ -12,10 +12,8 @@ const Woltmeter = (props: any) => {
   const { nodes, materials } = useGLTF('/newmodels/Woltmeter.gltf') as any
     const [data, setData] = useState<number>(0)
     const [click, setClick] = useState<boolean>(false)
-    const [colord, setColor] = useState<boolean>(false)
     const getClick = () => {
         setClick(!click)
-        // setColor(!colord)
         if (click) {
             return (
                 <p className={styles.datee}>Начальное значение {data} Вольт</p>
@@ -34,15 +32,20 @@ const Woltmeter = (props: any) => {
   return (
     <group {...props}  dispose={null}>
       <group  position={[-12.899, 18.318, -15.378]}>
-        <mesh  geometry={nodes.Cube004.geometry} material={materials['Material.021']} />
+        <mesh
+            geometry={nodes.Cube004.geometry}
+            material={materials['Material.021']}
+        />
         <mesh
             ref={ref}
             onClick={getClick}
             geometry={nodes.Cube004_1.geometry}
-            material={materials['Material.022']} >
-           {/*<meshStandardMaterial color={colord ? "red" : "blue"}/>*/}
-        </mesh>
-        <mesh geometry={nodes.Cube004_2.geometry} material={materials['Material.023']} />
+            material={materials['Material.022']}
+        />
+          <mesh
+              geometry={nodes.Cube004_2.geometry}
+              material={materials['Material.023']}
+          />
       </group>
     </group>
   )

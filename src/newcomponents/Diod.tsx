@@ -10,7 +10,10 @@ const Diod = (props: any) => {
   const { nodes, materials } = useGLTF('/newmodels/Diod.gltf') as any
   return (
     <group {...props} dispose={null}>
-      <group position={[-10.011, 17.418, -19.883]} scale={[0.084, 0.084, 0.081]}>
+      <group
+          position={[-10.011, 17.418, -19.883]}
+          scale={[0.084, 0.084, 0.081]}
+      >
         <mesh geometry={nodes.Cube006.geometry} material={materials['Teak Wood 01']} />
         <mesh geometry={nodes.Cube006_1.geometry} material={materials['Material.006']} />
         <mesh geometry={nodes.Cube006_2.geometry} material={materials['Material.024']} />

@@ -10,11 +10,27 @@ const CapacitorPlata = (props: any) => {
   const { nodes, materials } = useGLTF('/newmodels/CapacitorPlata.gltf') as any
   return (
     <group {...props} dispose={null}>
-      <group position={[-3.622, 17.548, -18.871]} rotation={[0, 0, Math.PI]} scale={[-0.094, -0.001, -0.094]}>
-        <mesh geometry={nodes.Основа_контакта_2003.geometry} material={materials['Material.007']} />
-        <mesh geometry={nodes.Основа_контакта_2003_1.geometry} material={materials['Material.009']} />
-        <mesh geometry={nodes.Основа_контакта_2003_2.geometry} material={materials['Material.004']} />
-        <mesh geometry={nodes.Основа_контакта_2003_3.geometry} material={materials['Material.006']} />
+      <group
+          position={[-3.622, 17.548, -18.871]}
+          rotation={[0, 0, Math.PI]}
+          scale={[-0.094, -0.001, -0.094]}
+      >
+        <mesh
+            geometry={nodes.Основа_контакта_2003.geometry}
+            material={materials['Material.007']}
+        />
+        <mesh
+            geometry={nodes.Основа_контакта_2003_1.geometry}
+            material={materials['Material.009']}
+        />
+        <mesh
+            geometry={nodes.Основа_контакта_2003_2.geometry}
+            material={materials['Material.004']}
+        />
+        <mesh
+            geometry={nodes.Основа_контакта_2003_3.geometry}
+            material={materials['Material.006']}
+        />
       </group>
     </group>
   )

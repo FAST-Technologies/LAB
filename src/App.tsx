@@ -5,32 +5,8 @@ import {RigidBody} from '@react-three/rapier'
 import { Canvas } from '@react-three/fiber'
 import {useState} from "react"
 import Woltmeter from "./newcomponents/Woltmeter";
-// import Model from './components/Model'
-// import Table from './components/Table'
-// import Automatic from './components/Automatic'
-// import Bullet from './components/Bullet'
-// import CapacitorContacts from './components/CapacitorContacts'
-// import CapacitorSurface from './components/CapacitorSurface'
-// import Coil from './components/Coil'
-// import ContactRoad from './components/ContactRoad'
-// import DeskForGun from './components/DeskForGun'
-// import DeskWithSurface from './components/DeskWithSurface'
-// import Floor from './components/Floor'
-// import GunsTrunk from './components/GunsTrunk'
-// import LightBulb from './components/LightBulb'
-// import PendulumBasis from './components/PendulumBasis'
-// import PowerSocket from './components/PowerSocket'
-// import RegulatorBase from './components/RegulatorBase'
-// import RegulatorWheel from './components/RegulatorWheel'
-// import SinkerLine from './components/SinkerLine'
-// import Voltmeter from './components/Voltmeter'
-// import Walls from './components/Walls'
-// import WiresForAutomatic from './components/WiresForAutomatic'
-// import WiresForAutomatRegulator from './components/WiresForAutomatRegulator'
-// import Capacitor from './components/Capacitor'
 import Fireflies from './components/Fireflies'
 import {Physics} from "@react-three/cannon";
-// import Buttons from "./components/Buttons";
 import useAudioHook from "./functionalComponents/useAudioHook";
 import * as THREE from "three"
 import WoltmeterGlass from "./newcomponents/WolmeterGlass";
@@ -66,12 +42,10 @@ import LampHolder from "./newcomponents/LampHolder";
 import Pendulum from "./newcomponents/Pendulum";
 import Pipe from "./newcomponents/Pipe";
 import Plata from "./newcomponents/Plata";
-import RegulatorBase from "./newcomponents/RegulatorBase";
 import RegulatorButton from "./newcomponents/RegulatorButton";
 import Scene from "./newcomponents/Scene"
 import Switcher1 from "./newcomponents/Switcher1";
 import Switcher2 from "./newcomponents/Switcher2";
-import Table from "./newcomponents/Table";
 import Thread from "./newcomponents/Thread";
 import TwoWires from "./newcomponents/TwoWires";
 import Weight from "./newcomponents/Weight";
@@ -81,15 +55,12 @@ import {Clemm2} from "./newcomponents/Clemm2";
 import RegulatorBase2 from "./newcomponents/RegulatorBase2";
 import ClemmButton from "./newcomponents/ClemmButton";
 import Stol from "./newcomponents/Stol";
-import Stol_2 from "./newcomponents/Stol_2";
-import Stol_3 from "./newcomponents/Stol_3";
 import Fon from "./newcomponents/Fon";
-import Stol_4 from "./newcomponents/Stol_4";
-import {Stol_5} from "./newcomponents/Stol_5";
 import {Stats, Environment, useGLTF} from "@react-three/drei";
 import {Perf} from "r3f-perf"
 import {useControls} from "leva";
 // import Model1 from "./newcomponents/Model1";
+
 export type bull = {
   classic: string,
   round: string
@@ -140,8 +111,11 @@ function App(props: any) {
       color: {value: '#1e2243'}
     }
   },[])
+
   const Table = useControls("Table", options)
+
   const Woltmeterd=useControls("Woltmeter", options)
+
   const model = useControls("Bullet", {
         model: {
           value: "classic",
@@ -191,10 +165,11 @@ function App(props: any) {
                 <CapacitorPlata/>
                 <Capacitor/>
                 <ClemmButton/>
-                {/*<CapContact1/>*/}
-                {/*<Stol_4/>*/}
-                <Stol position={[Table.x, Table.y, Table.z]} visible={Table.visible} color={Table.color}/>
-                {/*<Stol_5/>*/}
+                <Stol
+                    position={[Table.x, Table.y, Table.z]}
+                    visible={Table.visible}
+                    color={Table.color}
+                />
                 <Clemm/>
                 <Clemm2/>
                 <Coil/>
@@ -222,9 +197,6 @@ function App(props: any) {
                 <Scene/>
                 <Switcher1/>
                 <Switcher2/>
-                {/*<Table/>*/}
-                {/*<Stol_2/>*/}
-                {/*<Stol_3/>*/}
                 <Thread/>
                 <TwoWires/>
                 <Weight/>

@@ -10,9 +10,19 @@ const Clemm = (props: any) => {
   const { nodes, materials } = useGLTF('/newmodels/Clemm.gltf') as any
   return (
     <group {...props} dispose={null}>
-      <group position={[-15.52, 17.548, -21.256]} rotation={[Math.PI / 2, 0, 0]} scale={[0.398, 0.21, 0.219]}>
-        <mesh geometry={nodes.Cube009.geometry} material={materials.Plastic} />
-        <mesh geometry={nodes.Cube009_1.geometry} material={materials['Material.007']} />
+      <group
+          position={[-15.52, 17.548, -21.256]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={[0.398, 0.21, 0.219]}
+      >
+        <mesh
+            geometry={nodes.Cube009.geometry}
+            material={materials.Plastic}
+        />
+        <mesh
+            geometry={nodes.Cube009_1.geometry}
+            material={materials['Material.007']}
+        />
       </group>
     </group>
   )

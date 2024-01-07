@@ -10,9 +10,19 @@ const Capacitor = (props: any) => {
   const { nodes, materials } = useGLTF('/newmodels/Capatitor.gltf') as any
   return (
     <group {...props} dispose={null}>
-      <group position={[-3.446, 18.179, -18.849]} rotation={[-Math.PI, 0, 0.011]} scale={0.512}>
-        <mesh geometry={nodes.Cylinder013.geometry} material={materials['Material.018']} />
-        <mesh geometry={nodes.Cylinder013_1.geometry} material={materials['Material.019']} />
+      <group
+          position={[-3.446, 18.179, -18.849]}
+          rotation={[-Math.PI, 0, 0.011]}
+          scale={0.512}
+      >
+        <mesh
+            geometry={nodes.Cylinder013.geometry}
+            material={materials['Material.018']}
+        />
+        <mesh
+            geometry={nodes.Cylinder013_1.geometry}
+            material={materials['Material.019']}
+        />
       </group>
     </group>
   )

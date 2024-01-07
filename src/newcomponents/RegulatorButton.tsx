@@ -10,12 +10,12 @@ const RegulatorButton = (props: any) => {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/newmodels/RegulatorButton.gltf') as any
   const { actions } = useAnimations(animations, group)
-    const [click, setClick] = useState<boolean>(false)
-    const [active, setActive] = useState<boolean>(false)
-    const getButton = () => {
-      setClick(!click)
-        setActive(!active)
-    }
+  const [click, setClick] = useState<boolean>(false)
+  const [active, setActive] = useState<boolean>(false)
+  const getButton = () => {
+    setClick(!click)
+      setActive(!active)
+  }
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">

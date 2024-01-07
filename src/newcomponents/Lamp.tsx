@@ -19,7 +19,6 @@ const Lamp = (props: any) => {
           onPointerOver={(event) => (event.stopPropagation(), setHovered(true))}
           onPointerOut={(event) => setHovered(false)}
       >
-
         <mesh geometry={nodes.Cylinder015.geometry} material={materials['Material.011']} />
         <mesh geometry={nodes.Cylinder015_1.geometry} material={materials['Material.012']} />
         <mesh geometry={nodes.Cylinder015_2.geometry} material={materials['Material.014']}>

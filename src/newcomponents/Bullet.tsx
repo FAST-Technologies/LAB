@@ -7,8 +7,6 @@ import React, {useMemo, useRef, useState} from 'react'
 import {Html, useGLTF } from '@react-three/drei'
 import {useControls} from "leva";
 
-
-
 const Bullet = (props: any) => {
     const options = useMemo(()=>{
         return{
@@ -21,16 +19,16 @@ const Bullet = (props: any) => {
     },[])
 
     const Bullett = useControls("Bullet", options)
-  const { nodes, materials } = useGLTF('/newmodels/Bullet.gltf') as any
-  return (
-    <group position={[Bullett.x, Bullett.y, Bullett.z]} visible={Bullett.visible} color={Bullett.color} {...props} dispose={null}>
-      <mesh
-          geometry={nodes.Cylinder010.geometry}
-          material={materials['Iron with Splashed Paint']}
-          position={[-1.69, 17.507, -18.664]}
-          scale={0.232} />
-    </group>
-  )
+    const { nodes, materials } = useGLTF('/newmodels/Bullet.gltf') as any
+    return (
+        <group position={[Bullett.x, Bullett.y, Bullett.z]} visible={Bullett.visible} color={Bullett.color} {...props} dispose={null}>
+          <mesh
+              geometry={nodes.Cylinder010.geometry}
+              material={materials['Iron with Splashed Paint']}
+              position={[-1.69, 17.507, -18.664]}
+              scale={0.232} />
+        </group>
+    )
 }
 export default Bullet
 

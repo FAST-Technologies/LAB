@@ -7,15 +7,14 @@ import React, { useRef, useState } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 const Table = (props: any) => {
-  const { nodes, materials } = useGLTF('/newmodels/Table.gltf') as any
+    const { nodes, materials } = useGLTF('/newmodels/Table.gltf') as any
     const ref = useRef() as any
-// Hold state for hovered and clicked events
     const [hovered, hover] = useState<boolean>(false)
     const [clicked, click] = useState<boolean>(false)
     const setClick = () => {
         click(!clicked)
     }
-  return (
+    return (
     <group {...props} dispose={null}>
       <mesh
           castShadow
@@ -31,7 +30,7 @@ const Table = (props: any) => {
           {/*<meshStandardMaterial color={hovered ? 'red' : nodes.table_board.material}/>*/}
       </mesh>
     </group>
-  )
+    )
 }
 export default Table
 useGLTF.preload('/newmodels/Table.gltf')

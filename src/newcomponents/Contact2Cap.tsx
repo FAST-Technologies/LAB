@@ -10,9 +10,19 @@ const Contact2Cap = (props: any) => {
   const { nodes, materials } = useGLTF('/newmodels/Contact2Cap.gltf') as any
   return (
     <group {...props} dispose={null}>
-      <group position={[-12.971, 17.774, -19.47]} rotation={[0, 0, -Math.PI]} scale={[-0.069, -0.029, -0.069]}>
-        <mesh geometry={nodes['Изолятор_контакта_#1007_1'].geometry} material={materials['Material.009']} />
-        <mesh geometry={nodes['Изолятор_контакта_#1007_2'].geometry} material={materials['Material.007']} />
+      <group
+          position={[-12.971, 17.774, -19.47]}
+          rotation={[0, 0, -Math.PI]}
+          scale={[-0.069, -0.029, -0.069]}
+      >
+        <mesh
+            geometry={nodes['Изолятор_контакта_#1007_1'].geometry}
+            material={materials['Material.009']}
+        />
+        <mesh
+            geometry={nodes['Изолятор_контакта_#1007_2'].geometry}
+            material={materials['Material.007']}
+        />
       </group>
     </group>
   )
