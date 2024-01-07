@@ -13,9 +13,9 @@ const Lights = () => {
         return{
             castShadow : {
                 value: true,
-                onChange: (v: any) => {
-                    directionalRef.current.castShadow = v
-                },
+                // onChange: (v: any) => {
+                //     directionalRef.current.castShadow = v
+                // },
             },
             decay: {
                 value: 0,
@@ -38,11 +38,17 @@ const Lights = () => {
                 max: Math.PI,
                 step: 0.01
             },
+            penumbra: {
+                value: 0,
+                min: -Math.PI,
+                max: Math.PI,
+                step: 0.01
+            },
             visible: {
                 value: true,
-                onChange: (v: any) => {
-                    directionalRef.current.visible = v
-                },
+                // onChange: (v: any) => {
+                //     directionalRef.current.visible = v
+                // },
             },
             color: {
                 value: 'white',
@@ -57,27 +63,15 @@ const Lights = () => {
         return{
             castShadow : {
                 value: true,
-                onChange: (v: any) => {
-                    directionalRef.current.castShadow = v
-                },
-            },
-            decay: {
-                value: 0,
-                min: 0,
-                max: 2,
-                step: 0.01
-            },
-            angle: {
-                value: 0,
-                min: 0,
-                max: 360,
-                step: 0.01
+                // onChange: (v: any) => {
+                //     directionalRef.current.castShadow = v
+                // },
             },
             visible: {
                 value: true,
-                onChange: (v: any) => {
-                    ambientRef.current.visible = v
-                },
+                // onChange: (v: any) => {
+                //     ambientRef.current.visible = v
+                // },
             },
             intensity: {
                 value: 0,
@@ -96,25 +90,58 @@ const Lights = () => {
 
 
     // @ts-ignore
-    useControls('Directional Light', options)
+    const direct = useControls('Directional Light', options)
 // @ts-ignore
-    useControls('Ambient Light', options1)
+    const ambient = useControls('Ambient Light', options1)
     // @ts-ignore
-    useControls('Point Light', options)
+    const point = useControls('Point Light', options)
 
     // @ts-ignore
-    useControls('Spot Light', options)
+    const spot = useControls('Spot Light', options)
 
     // @ts-ignore
-    useControls('Hemisphere Light', options)
+    const hemi = useControls('Hemisphere Light', options)
 
     return (
         <>
-            <ambientLight ref={ambientRef} />
-            <directionalLight ref={directionalRef} />
-            <pointLight ref={pointRef} />
-            <spotLight ref={spotRef} />
-            <hemisphereLight ref={hemisphereRef}/>
+            <ambientLight
+                ref={ambientRef}
+                castShadow={ambient.castShadow}
+                visible={ambient.visible}
+                intensity={ambient.intensity}
+            />
+            <directionalLight
+                ref={directionalRef}
+                castShadow={direct.castShadow}
+                position={[direct.x, direct.y, direct.z]}
+                visible={direct.visible}
+                intensity={direct.intensity}
+            />
+            <pointLight
+                ref={pointRef}
+                castShadow={point.castShadow}
+                position={[point.x, point.y, point.z]}
+                visible={point.visible}
+                intensity={point.intensity}
+                decay={point.decay}
+            />
+            <spotLight
+                ref={spotRef}
+                castShadow={spot.castShadow}
+                position={[spot.x, spot.y, spot.z]}
+                visible={spot.visible}
+                intensity={spot.intensity}
+                decay={spot.decay}
+                angle={spot.angle}
+                penumbra={spot.penumbra}
+            />
+            <hemisphereLight
+                ref={hemisphereRef}
+                castShadow={hemi.castShadow}
+                position={[hemi.x, hemi.y, hemi.z]}
+                visible={hemi.visible}
+                intensity={hemi.intensity}
+            />
         </>
     )
 }

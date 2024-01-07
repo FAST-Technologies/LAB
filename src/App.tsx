@@ -147,11 +147,11 @@ function App(props: any) {
         {/*<OrthographicCamera makeDefault position={[0, 0, 1]} />*/}
         <OrbitControls enablePan={false} enableDamping={false} target={[2,2,2]}/>
         <color attach="background" args={[options.color.value]} />
-        {/*<Lights/>*/}
-        <hemisphereLight intensity={0.65}/>
-        <ambientLight intensity={Math.PI/2} />
-        <spotLight color="yellow" position={[10, 10, 10]} angle={0.6} penumbra={1} decay={0} intensity={Math.PI} />
-        <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
+        <Lights/>
+        {/*<hemisphereLight intensity={0.65}/>*/}
+        {/*<ambientLight intensity={Math.PI/2} />*/}
+        {/*<spotLight color="yellow" position={[10, 10, 10]} angle={0.6} penumbra={1} decay={0} intensity={Math.PI} />*/}
+        {/*<pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />*/}
         {/*<primitive object={gltf.scene} position={[0,0,0]}/>*/}
         <Suspense fallback={null}>
             <Physics>
